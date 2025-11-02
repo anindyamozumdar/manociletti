@@ -1,0 +1,88 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 10;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x588beb274390 .scope module, "t_Circuit_Boolean_CA" "t_Circuit_Boolean_CA" 2 1;
+ .timescale -9 -10;
+v0x588beb289c90_0 .var "A", 0 0;
+v0x588beb289d50_0 .var "B", 0 0;
+v0x588beb289e20_0 .var "C", 0 0;
+v0x588beb289f20_0 .var "D", 0 0;
+v0x588beb289ff0_0 .net "E", 0 0, L_0x588beb28a560;  1 drivers
+v0x588beb28a090_0 .net "F", 0 0, L_0x588beb28abc0;  1 drivers
+S_0x588beb274520 .scope module, "M1" "Circuit_Boolean_CA" 2 5, 3 3 0, S_0x588beb274390;
+ .timescale -9 -10;
+    .port_info 0 /OUTPUT 1 "E";
+    .port_info 1 /OUTPUT 1 "F";
+    .port_info 2 /INPUT 1 "A";
+    .port_info 3 /INPUT 1 "B";
+    .port_info 4 /INPUT 1 "C";
+    .port_info 5 /INPUT 1 "D";
+L_0x588beb28a160 .functor AND 1, v0x588beb289d50_0, v0x588beb289e20_0, C4<1>, C4<1>;
+L_0x588beb28a2a0 .functor OR 1, v0x588beb289c90_0, L_0x588beb28a160, C4<0>, C4<0>;
+L_0x588beb28a450 .functor AND 1, L_0x588beb28a3b0, v0x588beb289f20_0, C4<1>, C4<1>;
+L_0x588beb28a560 .functor OR 1, L_0x588beb28a2a0, L_0x588beb28a450, C4<0>, C4<0>;
+L_0x588beb28a790 .functor AND 1, L_0x588beb28a6f0, v0x588beb289e20_0, C4<1>, C4<1>;
+L_0x588beb28a930 .functor AND 1, v0x588beb289d50_0, L_0x588beb28a800, C4<1>, C4<1>;
+L_0x588beb28aab0 .functor AND 1, L_0x588beb28a930, L_0x588beb28a9e0, C4<1>, C4<1>;
+L_0x588beb28abc0 .functor OR 1, L_0x588beb28a790, L_0x588beb28aab0, C4<0>, C4<0>;
+v0x588beb23a490_0 .net "A", 0 0, v0x588beb289c90_0;  1 drivers
+v0x588beb289060_0 .net "B", 0 0, v0x588beb289d50_0;  1 drivers
+v0x588beb289120_0 .net "C", 0 0, v0x588beb289e20_0;  1 drivers
+v0x588beb2891c0_0 .net "D", 0 0, v0x588beb289f20_0;  1 drivers
+v0x588beb289280_0 .net "E", 0 0, L_0x588beb28a560;  alias, 1 drivers
+v0x588beb289390_0 .net "F", 0 0, L_0x588beb28abc0;  alias, 1 drivers
+v0x588beb289450_0 .net *"_ivl_1", 0 0, L_0x588beb28a160;  1 drivers
+v0x588beb289510_0 .net *"_ivl_11", 0 0, L_0x588beb28a6f0;  1 drivers
+v0x588beb2895d0_0 .net *"_ivl_13", 0 0, L_0x588beb28a790;  1 drivers
+v0x588beb289690_0 .net *"_ivl_15", 0 0, L_0x588beb28a800;  1 drivers
+v0x588beb289750_0 .net *"_ivl_17", 0 0, L_0x588beb28a930;  1 drivers
+v0x588beb289810_0 .net *"_ivl_19", 0 0, L_0x588beb28a9e0;  1 drivers
+v0x588beb2898d0_0 .net *"_ivl_21", 0 0, L_0x588beb28aab0;  1 drivers
+v0x588beb289990_0 .net *"_ivl_3", 0 0, L_0x588beb28a2a0;  1 drivers
+v0x588beb289a50_0 .net *"_ivl_5", 0 0, L_0x588beb28a3b0;  1 drivers
+v0x588beb289b10_0 .net *"_ivl_7", 0 0, L_0x588beb28a450;  1 drivers
+L_0x588beb28a3b0 .reduce/nor v0x588beb289d50_0;
+L_0x588beb28a6f0 .reduce/nor v0x588beb289d50_0;
+L_0x588beb28a800 .reduce/nor v0x588beb289e20_0;
+L_0x588beb28a9e0 .reduce/nor v0x588beb289f20_0;
+    .scope S_0x588beb274390;
+T_0 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x588beb289c90_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x588beb289d50_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x588beb289e20_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x588beb289f20_0, 0, 1;
+    %delay 100, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x588beb289c90_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x588beb289d50_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x588beb289e20_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x588beb289f20_0, 0, 1;
+    %end;
+    .thread T_0;
+    .scope S_0x588beb274390;
+T_1 ;
+    %vpi_call 2 15 "$dumpfile", "circuit_boolean_ca.vcd" {0 0 0};
+    %vpi_call 2 16 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x588beb274390 {0 0 0};
+    %delay 1000, 0;
+    %vpi_call 2 17 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "circuit_boolean_ca_tb.v";
+    "circuit_boolean_ca.v";
