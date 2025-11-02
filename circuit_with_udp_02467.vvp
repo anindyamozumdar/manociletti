@@ -1,0 +1,101 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 10;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x5e2fb776d0d0 .scope module, "t_Circuit_with_UDP_02467" "t_Circuit_with_UDP_02467" 2 1;
+ .timescale -9 -10;
+v0x5e2fb7783180_0 .var "A", 0 0;
+v0x5e2fb7783240_0 .var "B", 0 0;
+v0x5e2fb77832e0_0 .var "C", 0 0;
+v0x5e2fb77833e0_0 .var "D", 0 0;
+v0x5e2fb77834b0_0 .net "E", 0 0, L_0x5e2fb7783af0;  1 drivers
+v0x5e2fb7783550_0 .net "F", 0 0, L_0x5e2fb77840c0;  1 drivers
+v0x5e2fb7783620_0 .net "G", 0 0, L_0x5e2fb7784270;  1 drivers
+S_0x5e2fb776d260 .scope module, "M1" "Circuit_with_UDP_02467" 2 5, 3 18 0, S_0x5e2fb776d0d0;
+ .timescale -9 -10;
+    .port_info 0 /OUTPUT 1 "E";
+    .port_info 1 /OUTPUT 1 "F";
+    .port_info 2 /OUTPUT 1 "G";
+    .port_info 3 /INPUT 1 "A";
+    .port_info 4 /INPUT 1 "B";
+    .port_info 5 /INPUT 1 "C";
+    .port_info 6 /INPUT 1 "D";
+L_0x5e2fb77836f0 .functor AND 1, v0x5e2fb7783240_0, v0x5e2fb77832e0_0, C4<1>, C4<1>;
+L_0x5e2fb7783830 .functor OR 1, v0x5e2fb7783180_0, L_0x5e2fb77836f0, C4<0>, C4<0>;
+L_0x5e2fb77839e0 .functor AND 1, L_0x5e2fb7783940, v0x5e2fb77833e0_0, C4<1>, C4<1>;
+L_0x5e2fb7783af0 .functor OR 1, L_0x5e2fb7783830, L_0x5e2fb77839e0, C4<0>, C4<0>;
+L_0x5e2fb7783d20 .functor AND 1, L_0x5e2fb7783c80, v0x5e2fb77832e0_0, C4<1>, C4<1>;
+L_0x5e2fb7783e30 .functor AND 1, v0x5e2fb7783240_0, L_0x5e2fb7783d90, C4<1>, C4<1>;
+L_0x5e2fb7783fb0 .functor AND 1, L_0x5e2fb7783e30, L_0x5e2fb7783ee0, C4<1>, C4<1>;
+L_0x5e2fb77840c0 .functor OR 1, L_0x5e2fb7783d20, L_0x5e2fb7783fb0, C4<0>, C4<0>;
+UDP_UDP_02467 .udp/comb "UDP_02467", 3
+ ,"0001"
+ ,"0010"
+ ,"0101"
+ ,"0110"
+ ,"1001"
+ ,"1010"
+ ,"1101"
+ ,"1111";
+L_0x5e2fb7784270 .udp UDP_UDP_02467, v0x5e2fb7783180_0, v0x5e2fb7783240_0, v0x5e2fb77832e0_0;
+v0x5e2fb776b200_0 .net "A", 0 0, v0x5e2fb7783180_0;  1 drivers
+v0x5e2fb7782470_0 .net "B", 0 0, v0x5e2fb7783240_0;  1 drivers
+v0x5e2fb7782530_0 .net "C", 0 0, v0x5e2fb77832e0_0;  1 drivers
+v0x5e2fb77825d0_0 .net "D", 0 0, v0x5e2fb77833e0_0;  1 drivers
+v0x5e2fb7782690_0 .net "E", 0 0, L_0x5e2fb7783af0;  alias, 1 drivers
+v0x5e2fb77827a0_0 .net "F", 0 0, L_0x5e2fb77840c0;  alias, 1 drivers
+v0x5e2fb7782860_0 .net "G", 0 0, L_0x5e2fb7784270;  alias, 1 drivers
+v0x5e2fb7782920_0 .net *"_ivl_1", 0 0, L_0x5e2fb77836f0;  1 drivers
+v0x5e2fb77829e0_0 .net *"_ivl_11", 0 0, L_0x5e2fb7783c80;  1 drivers
+v0x5e2fb7782aa0_0 .net *"_ivl_13", 0 0, L_0x5e2fb7783d20;  1 drivers
+v0x5e2fb7782b60_0 .net *"_ivl_15", 0 0, L_0x5e2fb7783d90;  1 drivers
+v0x5e2fb7782c20_0 .net *"_ivl_17", 0 0, L_0x5e2fb7783e30;  1 drivers
+v0x5e2fb7782ce0_0 .net *"_ivl_19", 0 0, L_0x5e2fb7783ee0;  1 drivers
+v0x5e2fb7782da0_0 .net *"_ivl_21", 0 0, L_0x5e2fb7783fb0;  1 drivers
+v0x5e2fb7782e60_0 .net *"_ivl_3", 0 0, L_0x5e2fb7783830;  1 drivers
+v0x5e2fb7782f20_0 .net *"_ivl_5", 0 0, L_0x5e2fb7783940;  1 drivers
+v0x5e2fb7782fe0_0 .net *"_ivl_7", 0 0, L_0x5e2fb77839e0;  1 drivers
+L_0x5e2fb7783940 .reduce/nor v0x5e2fb7783240_0;
+L_0x5e2fb7783c80 .reduce/nor v0x5e2fb7783240_0;
+L_0x5e2fb7783d90 .reduce/nor v0x5e2fb77832e0_0;
+L_0x5e2fb7783ee0 .reduce/nor v0x5e2fb77833e0_0;
+    .scope S_0x5e2fb776d0d0;
+T_0 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5e2fb7783180_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5e2fb7783240_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5e2fb77832e0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5e2fb77833e0_0, 0, 1;
+    %delay 100, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5e2fb7783180_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5e2fb7783240_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5e2fb77832e0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5e2fb77833e0_0, 0, 1;
+    %end;
+    .thread T_0;
+    .scope S_0x5e2fb776d0d0;
+T_1 ;
+    %vpi_call 2 15 "$dumpfile", "circuit_with_udp_02467.vcd" {0 0 0};
+    %vpi_call 2 16 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x5e2fb776d0d0 {0 0 0};
+    %delay 1000, 0;
+    %vpi_call 2 17 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "circuit_with_udp_02467_tb.v";
+    "circuit_with_udp_02467.v";
