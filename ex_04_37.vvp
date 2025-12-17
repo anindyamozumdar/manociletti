@@ -1,0 +1,119 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 10;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x5a4c74d5ab40 .scope module, "binary_adder_4bit_df" "binary_adder_4bit_df" 2 3;
+ .timescale -9 -10;
+    .port_info 0 /OUTPUT 4 "Sum";
+    .port_info 1 /OUTPUT 1 "Carry_Out";
+    .port_info 2 /INPUT 4 "A";
+    .port_info 3 /INPUT 4 "B";
+    .port_info 4 /INPUT 1 "Carry_In";
+o0x7bb34c0b7018 .functor BUFZ 4, C4<zzzz>; HiZ drive
+v0x5a4c74d6ad00_0 .net "A", 3 0, o0x7bb34c0b7018;  0 drivers
+o0x7bb34c0b7048 .functor BUFZ 4, C4<zzzz>; HiZ drive
+v0x5a4c74d80f50_0 .net "B", 3 0, o0x7bb34c0b7048;  0 drivers
+o0x7bb34c0b7078 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5a4c74d81030_0 .net "Carry_In", 0 0, o0x7bb34c0b7078;  0 drivers
+v0x5a4c74d81100_0 .net "Carry_Out", 0 0, L_0x5a4c74d83020;  1 drivers
+v0x5a4c74d811c0_0 .net "Sum", 3 0, L_0x5a4c74d83120;  1 drivers
+L_0x7bb34c06e060 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x5a4c74d812f0_0 .net *"_ivl_10", 0 0, L_0x7bb34c06e060;  1 drivers
+v0x5a4c74d813d0_0 .net *"_ivl_11", 4 0, L_0x5a4c74d83510;  1 drivers
+v0x5a4c74d814b0_0 .net *"_ivl_13", 4 0, L_0x5a4c74d83650;  1 drivers
+L_0x7bb34c06e0a8 .functor BUFT 1, C4<0000>, C4<0>, C4<0>, C4<0>;
+v0x5a4c74d81590_0 .net *"_ivl_16", 3 0, L_0x7bb34c06e0a8;  1 drivers
+v0x5a4c74d81670_0 .net *"_ivl_17", 4 0, L_0x5a4c74d837b0;  1 drivers
+v0x5a4c74d81750_0 .net *"_ivl_3", 4 0, L_0x5a4c74d83240;  1 drivers
+L_0x7bb34c06e018 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x5a4c74d81830_0 .net *"_ivl_6", 0 0, L_0x7bb34c06e018;  1 drivers
+v0x5a4c74d81910_0 .net *"_ivl_7", 4 0, L_0x5a4c74d83390;  1 drivers
+L_0x5a4c74d83020 .part L_0x5a4c74d837b0, 4, 1;
+L_0x5a4c74d83120 .part L_0x5a4c74d837b0, 0, 4;
+L_0x5a4c74d83240 .concat [ 4 1 0 0], o0x7bb34c0b7018, L_0x7bb34c06e018;
+L_0x5a4c74d83390 .concat [ 4 1 0 0], o0x7bb34c0b7048, L_0x7bb34c06e060;
+L_0x5a4c74d83510 .arith/sum 5, L_0x5a4c74d83240, L_0x5a4c74d83390;
+L_0x5a4c74d83650 .concat [ 1 4 0 0], o0x7bb34c0b7078, L_0x7bb34c06e0a8;
+L_0x5a4c74d837b0 .arith/sum 5, L_0x5a4c74d83510, L_0x5a4c74d83650;
+S_0x5a4c74d6ab70 .scope module, "t_addsub_4bit" "t_addsub_4bit" 3 1;
+ .timescale -9 -10;
+v0x5a4c74d82c00_0 .var "t_A", 3 0;
+v0x5a4c74d82ce0_0 .var "t_B", 3 0;
+v0x5a4c74d82db0_0 .var "t_M", 0 0;
+v0x5a4c74d82eb0_0 .net "t_carry_out", 0 0, L_0x5a4c74d838f0;  1 drivers
+v0x5a4c74d82f80_0 .net "t_res", 3 0, L_0x5a4c74d839e0;  1 drivers
+S_0x5a4c74d81a90 .scope module, "AS4" "addsub_4bit" 3 7, 4 3 0, S_0x5a4c74d6ab70;
+ .timescale -9 -10;
+    .port_info 0 /OUTPUT 4 "res";
+    .port_info 1 /OUTPUT 1 "carry_out";
+    .port_info 2 /INPUT 4 "A";
+    .port_info 3 /INPUT 4 "B";
+    .port_info 4 /INPUT 1 "M";
+L_0x5a4c74d59f80 .functor XOR 5, L_0x5a4c74d83c60, L_0x5a4c74d83f10, C4<00000>, C4<00000>;
+v0x5a4c74d81c40_0 .net "A", 3 0, v0x5a4c74d82c00_0;  1 drivers
+v0x5a4c74d81d40_0 .net "B", 3 0, v0x5a4c74d82ce0_0;  1 drivers
+v0x5a4c74d81e20_0 .net "M", 0 0, v0x5a4c74d82db0_0;  1 drivers
+L_0x7bb34c06e138 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x5a4c74d81ef0_0 .net *"_ivl_10", 0 0, L_0x7bb34c06e138;  1 drivers
+v0x5a4c74d81fd0_0 .net *"_ivl_11", 3 0, L_0x5a4c74d83e20;  1 drivers
+v0x5a4c74d82100_0 .net *"_ivl_13", 4 0, L_0x5a4c74d83f10;  1 drivers
+L_0x7bb34c06e180 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x5a4c74d821e0_0 .net *"_ivl_16", 0 0, L_0x7bb34c06e180;  1 drivers
+v0x5a4c74d822c0_0 .net *"_ivl_17", 4 0, L_0x5a4c74d59f80;  1 drivers
+v0x5a4c74d823a0_0 .net *"_ivl_19", 4 0, L_0x5a4c74d840e0;  1 drivers
+v0x5a4c74d82480_0 .net *"_ivl_21", 4 0, L_0x5a4c74d84290;  1 drivers
+L_0x7bb34c06e1c8 .functor BUFT 1, C4<0000>, C4<0>, C4<0>, C4<0>;
+v0x5a4c74d82560_0 .net *"_ivl_24", 3 0, L_0x7bb34c06e1c8;  1 drivers
+v0x5a4c74d82640_0 .net *"_ivl_25", 4 0, L_0x5a4c74d843d0;  1 drivers
+v0x5a4c74d82720_0 .net *"_ivl_3", 4 0, L_0x5a4c74d83b20;  1 drivers
+L_0x7bb34c06e0f0 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x5a4c74d82800_0 .net *"_ivl_6", 0 0, L_0x7bb34c06e0f0;  1 drivers
+v0x5a4c74d828e0_0 .net *"_ivl_7", 4 0, L_0x5a4c74d83c60;  1 drivers
+v0x5a4c74d829c0_0 .net "carry_out", 0 0, L_0x5a4c74d838f0;  alias, 1 drivers
+v0x5a4c74d82a80_0 .net "res", 3 0, L_0x5a4c74d839e0;  alias, 1 drivers
+L_0x5a4c74d838f0 .part L_0x5a4c74d843d0, 4, 1;
+L_0x5a4c74d839e0 .part L_0x5a4c74d843d0, 0, 4;
+L_0x5a4c74d83b20 .concat [ 4 1 0 0], v0x5a4c74d82c00_0, L_0x7bb34c06e0f0;
+L_0x5a4c74d83c60 .concat [ 4 1 0 0], v0x5a4c74d82ce0_0, L_0x7bb34c06e138;
+L_0x5a4c74d83e20 .concat [ 1 1 1 1], v0x5a4c74d82db0_0, v0x5a4c74d82db0_0, v0x5a4c74d82db0_0, v0x5a4c74d82db0_0;
+L_0x5a4c74d83f10 .concat [ 4 1 0 0], L_0x5a4c74d83e20, L_0x7bb34c06e180;
+L_0x5a4c74d840e0 .arith/sum 5, L_0x5a4c74d83b20, L_0x5a4c74d59f80;
+L_0x5a4c74d84290 .concat [ 1 4 0 0], v0x5a4c74d82db0_0, L_0x7bb34c06e1c8;
+L_0x5a4c74d843d0 .arith/sum 5, L_0x5a4c74d840e0, L_0x5a4c74d84290;
+    .scope S_0x5a4c74d6ab70;
+T_0 ;
+    %pushi/vec4 2, 0, 4;
+    %store/vec4 v0x5a4c74d82c00_0, 0, 4;
+    %pushi/vec4 2, 0, 4;
+    %store/vec4 v0x5a4c74d82ce0_0, 0, 4;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5a4c74d82db0_0, 0, 1;
+    %delay 100, 0;
+    %pushi/vec4 2, 0, 4;
+    %store/vec4 v0x5a4c74d82c00_0, 0, 4;
+    %pushi/vec4 2, 0, 4;
+    %store/vec4 v0x5a4c74d82ce0_0, 0, 4;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5a4c74d82db0_0, 0, 1;
+    %end;
+    .thread T_0;
+    .scope S_0x5a4c74d6ab70;
+T_1 ;
+    %vpi_call 3 17 "$dumpfile", "ex_04_37.vcd" {0 0 0};
+    %vpi_call 3 18 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x5a4c74d6ab70 {0 0 0};
+    %delay 1000, 0;
+    %vpi_call 3 19 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "./binary_adder_4bit_df.v";
+    "./ex_04_37_tb.v";
+    "./ex_04_37.v";
